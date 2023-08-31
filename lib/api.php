@@ -2,7 +2,7 @@
 /*----- Создание API запроса -----*/
 function api ($method, $params, $key=APIKEY) {
     $params['access_token'] = $key;
-    $params['v'] = 5.151;
+    $params['v'] = 5.131;
     $query = http_build_query($params);
     $url = "https://api.vk.com/method/" . $method . '?' . $query;
     return file_get_contents($url);
