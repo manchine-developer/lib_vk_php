@@ -5,7 +5,7 @@ function sendmessage($peer, $message, $payload = '') {
     return api("messages.send", array(
         'peer_ids' => $peer,
         'message' => $message,
-        'random_id' => '0',
+        'random_id' => rand(-2147483648, 2147483647),
         'payload' => $payload
     ));
 }

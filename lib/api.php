@@ -1,7 +1,7 @@
 <?php
 /*----- Создание API запроса -----*/
-function api ($method, $params, $key=APIKEY) {
-    $params['access_token'] = $key;
+function api ($method, $params) {
+    $params['access_token'] = "vk1.a.eWmbXlQEnucSpf8okHL1PnJu_iP8Uu1bIn7eIOqdhtXPtQiADJpBhO4pjU_-XnJyNHlx8sEgMC3R-4abQ7x_9x76drKm6sZzj69_yIZWWWMK_3IAIYHBmb2T-0EqQk_LGabLceGARUZkopj3fcFkPZAF-dR_I95OjqRNRuBYyyju11NYg3u5QXesO_fJp05nvMpRmHtISZE_VC47LbePXw";
     $params['v'] = 5.131;
     $query = http_build_query($params);
     $url = "https://api.vk.com/method/" . $method . '?' . $query;
@@ -33,4 +33,10 @@ function OK() {
     ob_end_flush();
     flush();
     return True;
+}
+
+function debug() {
+    ini_set('error_reporting', E_ALL);
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
 }
